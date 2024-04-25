@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppbarDashboardWidget extends StatelessWidget {
-  const AppbarDashboardWidget(
-      {super.key, this.iconLeft,  this.title});
+  const AppbarDashboardWidget({super.key, this.title});
 
-  final Widget? iconLeft ;
+
   final String? title;
 
   @override
@@ -21,15 +20,26 @@ class AppbarDashboardWidget extends StatelessWidget {
           Container(
             height: 100.w,
             width: MediaQuery.of(context).size.width,
-            child: AppBar(
-              backgroundColor: ColorPalette.white,
-              leading: iconLeft,
-              automaticallyImplyLeading: false,
-              centerTitle: true,
-              actions: [Image.asset(AssetHelper.iconAppbarRight)],
-              title: Text(
-                '${title}',
-                textAlign: TextAlign.center,style: TextStyle(fontSize: 24.sp,fontWeight: FontWeight.w700,fontFamily: 'MyfontBold'),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(20, 30, 20, 0).w,
+              child: AppBar(
+                backgroundColor: ColorPalette.white,
+                leading: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Image.asset(AssetHelper.iconBackAppbar)),
+                automaticallyImplyLeading: false,
+                centerTitle: true,
+                actions: [Image.asset(AssetHelper.iconAppbarRight)],
+                title: Text(
+                  '${title}',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'MyfontBold'),
+                ),
               ),
             ),
           ),

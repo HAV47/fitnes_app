@@ -60,9 +60,9 @@ extension ExtendedTextStyle on TextStyle {
 
   TextStyle get fontCaption {
     return copyWith(
-      fontSize: 12,
-      height: 12 / 10,
-      fontFamily: 'Myfont'
+        fontSize: 12,
+        height: 12 / 10,
+        fontFamily: 'Myfont'
     );
   }
 

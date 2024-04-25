@@ -1,6 +1,8 @@
 import 'package:fitness_ui_ticket/constants/dimentions/color_palette.dart';
 import 'package:fitness_ui_ticket/routes.dart';
+import 'package:fitness_ui_ticket/ui/dashboard/ativity_tracker_screen.dart';
 import 'package:fitness_ui_ticket/ui/dashboard/home_screen.dart';
+import 'package:fitness_ui_ticket/ui/dashboard/notification_screen.dart';
 import 'package:fitness_ui_ticket/ui/login_register/intro_register_screen.dart';
 import 'package:fitness_ui_ticket/ui/login_register/login_screen.dart';
 import 'package:fitness_ui_ticket/ui/login_register/welcome_screen.dart';
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(
                   seedColor: ColorPalette.backgroundScaffoldColor)),
           routes: routes,
-          home: HomeScreen(),
+          home: ActivityTrackerScreen(),
 
         );
       },

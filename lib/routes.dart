@@ -1,4 +1,6 @@
+import 'package:fitness_ui_ticket/ui/dashboard/ativity_tracker_screen.dart';
 import 'package:fitness_ui_ticket/ui/dashboard/home_screen.dart';
+import 'package:fitness_ui_ticket/ui/dashboard/notification_screen.dart';
 import 'package:fitness_ui_ticket/ui/login_register/complete_screen.dart';
 import 'package:fitness_ui_ticket/ui/login_register/intro_register_screen.dart';
 import 'package:fitness_ui_ticket/ui/login_register/login_screen.dart';
@@ -15,4 +17,6 @@ final Map<String, WidgetBuilder> routes = {
   LoginScreen.routeName: (context) => const LoginScreen(),
   WelcomeScreen.routeName: (context) => const WelcomeScreen(),
   HomeScreen.routeName: (context) => const HomeScreen(),
+  NotificationScreen.routeName: (context) => const NotificationScreen(),
+  ActivityTrackerScreen.routeName: (context) => const ActivityTrackerScreen(),
 };

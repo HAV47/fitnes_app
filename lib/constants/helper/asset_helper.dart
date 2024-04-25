@@ -18,6 +18,22 @@ class AssetHelper {
   static const String iconAppbarRight = 'assets/icons/icon_appbar_right.png';
   static const String iconBackAppbar = 'assets/icons/back_appbar.png';
   static const String iconNotification = 'assets/icons/notice.png';
+  static const String workOut = 'assets/icons/work_out.png';
+  static const String workOut1 = 'assets/icons/work_out_1.png';
+  static const String workOut2 = 'assets/icons/work_out_2.png';
+  static const String workOut3 = 'assets/icons/work_out_3.png';
+
+  //icon Notification
+  static const String n1 = 'assets/icons/n1.png';
+  static const String n2 = 'assets/icons/n2.png';
+  static const String n3 = 'assets/icons/n3.png';
+  static const String n4 = 'assets/icons/n4.png';
+  static const String n5 = 'assets/icons/n5.png';
+  static const String n6 = 'assets/icons/n6.png';
+  // Activity tracker
+  static const String at1 = 'assets/icons/at1.png';
+  static const String at2 = 'assets/icons/at2.png';
+
 
   //images
   static const String textIntro = 'assets/images/text_intro.png';
@@ -31,7 +47,29 @@ class AssetHelper {
   static const String register_2 = 'assets/images/register2.png';
   static const String welcome = 'assets/images/welcome.png';
   static const String dots = 'assets/images/dots.png';
-  static const String container = 'assets/images/container.png';
+  static const String container = 'assets/images/abc.png';
+  static const String banner = 'assets/images/ban.png';
+  static const String activity = 'assets/images/activity.png';
+  static const String water = 'assets/images/water.png';
+  static const String sleep = 'assets/images/sleep.png';
+  static const String kCal = 'assets/images/k_calories.png';
+  static const String proges = 'assets/images/proges.png';
+  static const String workOutImage = 'assets/images/work_out_image.png';
+  static const String workOutImage2 = 'assets/images/w2.png';
+  static const String workOutImage3 = 'assets/images/w3.png';
+
+
+  // Image activity progesss
+  static const String ap1 = 'assets/images/ap1.png';
+  static const String ap2 = 'assets/images/ap2.png';
+  static const String ap3 = 'assets/images/ap3.png';
+  static const String ap4 = 'assets/images/ap4.png';
+  static const String ap5 = 'assets/images/ap5.png';
+  static const String ap6 = 'assets/images/ap6.png';
+  static const String ap7 = 'assets/images/ap7.png';
+
+
+
 
 
 }
