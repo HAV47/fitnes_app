@@ -1,5 +1,6 @@
 class AssetHelper {
   //icon
+  static const String notifyIcon = 'assets/icons/notify_icon.png';
   static const String iconBack = 'assets/icons/icon_back.png';
   static const String iconProfile = 'assets/icons/profile.png';
   static const String iconProfile2 = 'assets/icons/profile_2.png';
@@ -57,6 +58,9 @@ class AssetHelper {
   static const String workOutImage = 'assets/images/work_out_image.png';
   static const String workOutImage2 = 'assets/images/w2.png';
   static const String workOutImage3 = 'assets/images/w3.png';
+  static const String setup = 'assets/images/setup.png';
+  static const String wo1 = 'assets/images/wo1.png';
+  static const String wo_pic1 = 'assets/images/wo_pic1.png';
 
 
   // Image activity progesss
@@ -68,7 +72,15 @@ class AssetHelper {
   static const String ap6 = 'assets/images/ap6.png';
   static const String ap7 = 'assets/images/ap7.png';
 
+  // Last Activity
+  static const String la1 = 'assets/images/la1.png';
+  static const String la2 = 'assets/images/la2.png';
 
+
+// train
+  static const String train1 = 'assets/images/train1.png';
+  static const String train2 = 'assets/images/train2.png';
+  static const String train3 = 'assets/images/train3.png';
 
 
 

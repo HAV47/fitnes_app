@@ -24,7 +24,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
             title: 'Notification',
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(15, 20, 0, 0).w,
+            padding: EdgeInsets.fromLTRB(15 , 20, 0, 0).w,
             child: Column(
               children: [
                 notification(AssetHelper.n1,'Hey, it’s time for lunch','About 1 minutes ago'),

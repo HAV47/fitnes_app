@@ -1,6 +1,7 @@
 import 'package:dashed_line/dashed_line.dart';
 import 'package:fitness_ui_ticket/constants/dimentions/color_palette.dart';
 import 'package:fitness_ui_ticket/constants/helper/asset_helper.dart';
+import 'package:fitness_ui_ticket/constants/helper/image_helper.dart';
 import 'package:fitness_ui_ticket/widget/appbar_dashboard_widget.dart';
 import 'package:fitness_ui_ticket/widget/button_widget.dart';
 import 'package:flutter/cupertino.dart';
@@ -53,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           Padding(
             padding: EdgeInsets.only(right: 30.w),
-            child: Icon(Icons.notifications_none_outlined),
+            child: Image.asset(AssetHelper.notifyIcon, width: 24.w,height: 24.w,),
           )
         ],
         title: Padding(

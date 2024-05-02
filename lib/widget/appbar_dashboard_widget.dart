@@ -21,7 +21,7 @@ class AppbarDashboardWidget extends StatelessWidget {
             height: 100.w,
             width: MediaQuery.of(context).size.width,
             child: Padding(
-              padding: EdgeInsets.fromLTRB(20, 30, 20, 0).w,
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 0).w,
               child: AppBar(
                 backgroundColor: ColorPalette.white,
                 leading: GestureDetector(

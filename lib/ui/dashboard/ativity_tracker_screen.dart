@@ -214,7 +214,7 @@ class _ActivityTrackerScreenState extends State<ActivityTrackerScreen> {
                     children: [
                       Text('Latest Activity',
                           style: TextStyle(
-                              fontFamily: 'Myfont',
+                              fontFamily: 'MyfontMedium',
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
                               color: ColorPalette.black)),
@@ -229,6 +229,16 @@ class _ActivityTrackerScreenState extends State<ActivityTrackerScreen> {
                       )
                     ],
                   ),
+                  SizedBox(height: 20.w),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+
+                          lastActivity(AssetHelper.la1,'Drinking 300ml Water','About 3 minutes ago',true),
+                          SizedBox(height: 20.w),
+                          lastActivity(AssetHelper.la2,'Eat Snack (Fitbar)','About 10 minutes ago',false),
+                    ],
+                  )
                 ],
               ),
             )
@@ -241,6 +251,30 @@ class _ActivityTrackerScreenState extends State<ActivityTrackerScreen> {
   Widget activityProgress(String image, String data) {
     return Column(
       children: [Image.asset(image),SizedBox(height: 5.w,), Text(data)],
+    );
+  }
+  Widget lastActivity (String image,String title,String subtitle,bool highlight){
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(22.w),
+        color:  ColorPalette.white,
+        boxShadow: [
+          highlight == true ? BoxShadow(
+              color:   ColorPalette.borderColor ,
+              blurRadius: 30.w,
+              spreadRadius: 20.w) : BoxShadow(
+            color: ColorPalette.white,
+            blurRadius: 30.w,
+
+
+          )
+        ]),
+      child: ListTile(
+        subtitle: Text(subtitle,style: TextStyle(fontSize: 10.sp,fontFamily: 'Myfont',fontWeight: FontWeight.w400),),
+        leading: CircleAvatar(backgroundImage: AssetImage(image)),
+        title: Text(title,style:TextStyle(fontSize: 12.sp,fontFamily: 'MyfontMedium',fontWeight: FontWeight.w500)),
+        trailing: Icon(Icons.more_vert,size: 15.sp),
+      ),
     );
   }
 }
