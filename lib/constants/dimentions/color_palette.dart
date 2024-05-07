@@ -48,4 +48,11 @@ class Gradients {
         ColorPalette.primaryBlue.withOpacity(0.2),
         ColorPalette.secondBlue.withOpacity(0.2),
       ]);
+  static Gradient purpleLinearOpacity = LinearGradient(
+      begin: Alignment.centerRight,
+      end: Alignment.centerLeft,
+      colors: [
+        ColorPalette.primaryPurple.withOpacity(0.2),
+        ColorPalette.secondPurple.withOpacity(0.2),
+      ]);
 }
