@@ -1,12 +1,13 @@
-import 'package:dashed_line/dashed_line.dart';
 import 'package:fitness_ui_ticket/constants/dimentions/color_palette.dart';
 import 'package:fitness_ui_ticket/constants/helper/asset_helper.dart';
-import 'package:fitness_ui_ticket/constants/helper/image_helper.dart';
-import 'package:fitness_ui_ticket/widget/appbar_dashboard_widget.dart';
-import 'package:fitness_ui_ticket/widget/button_widget.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:fitness_ui_ticket/ui/dashboard/ativity_tracker_screen.dart';
+import 'package:fitness_ui_ticket/ui/dashboard/complete_setup_screen.dart';
+import 'package:fitness_ui_ticket/ui/dashboard/notification_screen.dart';
+import 'package:fitness_ui_ticket/ui/dashboard/profile_screen.dart';
+import 'package:fitness_ui_ticket/ui/meal_planner/meal_home_screen.dart';
+import 'package:fitness_ui_ticket/ui/sleep_tracker/sleep_tracker_screen.dart';
+import 'package:fitness_ui_ticket/ui/workout_tracker/workout_home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../constants/model/work_out_model.dart';
@@ -32,13 +33,13 @@ class _HomeScreenState extends State<HomeScreen> {
     ),
     WorkOutModel(
       image: AssetHelper.workOut2,
-      title: 'Fullbody Workout',
+      title: 'Lowerbody Workout',
       titleString: '180 Calories Burn | 20minutes',
       subtitle: AssetHelper.workOutImage2,
     ),
     WorkOutModel(
       image: AssetHelper.workOut3,
-      title: 'Fullbody Workout',
+      title: 'Ab Workout',
       titleString: '180 Calories Burn | 20minutes',
       subtitle: AssetHelper.workOutImage3,
     ),
@@ -49,35 +50,46 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: ColorPalette.white,
       appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
         backgroundColor: ColorPalette.white,
         automaticallyImplyLeading: false,
         actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 30.w),
-            child: Image.asset(AssetHelper.notifyIcon, width: 24.w,height: 24.w,),
+          GestureDetector(
+        onTap: (){
+          Navigator.of(context).pushNamed(NotificationScreen.routeName);
+        },
+            child: Padding(
+              padding: EdgeInsets.only(right: 30.w),
+              child: Image.asset(AssetHelper.notifyIcon, width: 24.w,height: 24.w,),
+            ),
           )
         ],
         title: Padding(
           padding: EdgeInsets.all(10.w),
           child: Column(
             children: [
-              RichText(
-                text: TextSpan(
-                  text: 'Welcome Back, ',
-                  style: TextStyle(
-                      fontSize: 12.sp,
-                      fontFamily: 'Myfont',
-                      fontWeight: FontWeight.w400,
-                      color: ColorPalette.gray2),
-                  children: <TextSpan>[
-                    TextSpan(
-                        text: '\nStefani Wong',
-                        style: TextStyle(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'MyfontBold',
-                            color: ColorPalette.black)),
-                  ],
+              GestureDetector(
+                onTap: (){
+                  Navigator.of(context).pushNamed(ProfileScreen.routeName);
+                },
+                child: RichText(
+                  text: TextSpan(
+                    text: 'Welcome Back, ',
+                    style: TextStyle(
+                        fontSize: 12.sp,
+                        fontFamily: 'Myfont',
+                        fontWeight: FontWeight.w400,
+                        color: ColorPalette.gray2),
+                    children: <TextSpan>[
+                      TextSpan(
+                          text: '\nStefani Wong',
+                          style: TextStyle(
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'MyfontBold',
+                              color: ColorPalette.black)),
+                    ],
+                  ),
                 ),
               )
             ],
@@ -183,10 +195,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: TextStyle(
                               fontSize: 14.sp,
                               fontFamily: 'Myfont',
-                              color: ColorPalette.black),
+                              color: ColorPalette.black,fontWeight: FontWeight.w600),
                         ),
                       ),
                       GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).pushNamed(CompleteSetupScreen.routeName);
+                        },
                         child: Container(
                           height: 40.w,
                           width: 100.w,
@@ -195,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               borderRadius: BorderRadius.circular(24.h),
                               gradient: Gradients.blueLinear),
                           child: Text(
-                            'View More',
+                            'Check',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontFamily: 'Myfont',
@@ -238,46 +253,51 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 300.w,
                     child: Padding(
                       padding: EdgeInsets.fromLTRB(13.w, 20.w, 5.w, 10.w),
-                      child: Row(
-                        children: [
-                          Image.asset(AssetHelper.water),
-                          Spacer(),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Water Intake',
-                                style: TextStyle(
-                                    fontSize: 12.sp,
-                                    fontFamily: 'MyfontMedium',
-                                    fontWeight: FontWeight.w500),
-                              ),
-                              SizedBox(height: 10.w),
-                              Text(
-                                '4 Liters',
-                                style: TextStyle(
-                                    fontSize: 14.sp,
-                                    fontFamily: 'MyfonMedium',
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xFF9DCEFF)),
-                              ),
-                              SizedBox(height: 10.w),
-                              Text(
-                                'Real time updates',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontFamily: 'Myfont',
-                                    fontSize: 10.sp,
-                                    color: ColorPalette.gray1),
-                              ),
-                              waterRealTime('6am - 8am', true, '600ml'),
-                              waterRealTime('9am - 11am', true, '500ml'),
-                              waterRealTime('11am - 2pm', true, '1000ml'),
-                              waterRealTime('2pm - 4pm', true, '700ml'),
-                              waterRealTime('4pm - now', false, '900ml'),
-                            ],
-                          ),
-                        ],
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).pushNamed(ActivityTrackerScreen.routeName);
+                        },
+                        child: Row(
+                          children: [
+                            Image.asset(AssetHelper.water),
+                            Spacer(),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Water Intake',
+                                  style: TextStyle(
+                                      fontSize: 12.sp,
+                                      fontFamily: 'MyfontMedium',
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                SizedBox(height: 10.w),
+                                Text(
+                                  '4 Liters',
+                                  style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontFamily: 'MyfonMedium',
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xFF9DCEFF)),
+                                ),
+                                SizedBox(height: 10.w),
+                                Text(
+                                  'Real time updates',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontFamily: 'Myfont',
+                                      fontSize: 10.sp,
+                                      color: ColorPalette.gray1),
+                                ),
+                                waterRealTime('6am - 8am', true, '600ml'),
+                                waterRealTime('9am - 11am', true, '500ml'),
+                                waterRealTime('11am - 2pm', true, '1000ml'),
+                                waterRealTime('2pm - 4pm', true, '700ml'),
+                                waterRealTime('4pm - now', false, '900ml'),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -299,62 +319,67 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: Padding(
                           padding: EdgeInsets.all(20.w),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Sleep',
-                                style: TextStyle(
-                                    fontSize: 12.sp,
-                                    fontFamily: 'MyfontMedium',
-                                    fontWeight: FontWeight.w500),
-                              ),
-                              // SizedBox(height: 5.w),
-                              RichText(
-                                text: TextSpan(
-                                  text: '8',
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.of(context).pushNamed(SleepTrackerScreen.routeName);
+                            },
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Sleep',
                                   style: TextStyle(
-                                      fontSize: 14.sp,
+                                      fontSize: 12.sp,
                                       fontFamily: 'MyfontMedium',
-                                      fontWeight: FontWeight.w600,
-                                      color: Color(0xFF9DCEFF)),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                      text: 'h',
-                                      style: TextStyle(
-                                          fontSize: 10.sp,
-                                          fontWeight: FontWeight.w600,
-                                          fontFamily: 'MyfontMedium',
-                                          color: Color(0xFF9DCEFF)),
-                                    ),
-                                    TextSpan(
-                                      text: ' 20',
-                                      style: TextStyle(
-                                          fontSize: 14.sp,
-                                          fontWeight: FontWeight.w600,
-                                          fontFamily: 'MyfontMedium',
-                                          color: Color(0xFF9DCEFF)),
-                                    ),
-                                    TextSpan(
-                                      text: 'm',
-                                      style: TextStyle(
-                                          fontSize: 10.sp,
-                                          fontWeight: FontWeight.w600,
-                                          fontFamily: 'MyfontMedium',
-                                          color: Color(0xFF9DCEFF)),
-                                    ),
-                                  ],
+                                      fontWeight: FontWeight.w500),
                                 ),
-                              ),
-                              Expanded(
-                                  child: Container(
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                  image: AssetImage(AssetHelper.sleep),
-                                  fit: BoxFit.cover,
-                                )),
-                              ))
-                            ],
+                                // SizedBox(height: 5.w),
+                                RichText(
+                                  text: TextSpan(
+                                    text: '8',
+                                    style: TextStyle(
+                                        fontSize: 14.sp,
+                                        fontFamily: 'MyfontMedium',
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xFF9DCEFF)),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text: 'h',
+                                        style: TextStyle(
+                                            fontSize: 10.sp,
+                                            fontWeight: FontWeight.w600,
+                                            fontFamily: 'MyfontMedium',
+                                            color: Color(0xFF9DCEFF)),
+                                      ),
+                                      TextSpan(
+                                        text: ' 20',
+                                        style: TextStyle(
+                                            fontSize: 14.sp,
+                                            fontWeight: FontWeight.w600,
+                                            fontFamily: 'MyfontMedium',
+                                            color: Color(0xFF9DCEFF)),
+                                      ),
+                                      TextSpan(
+                                        text: 'm',
+                                        style: TextStyle(
+                                            fontSize: 10.sp,
+                                            fontWeight: FontWeight.w600,
+                                            fontFamily: 'MyfontMedium',
+                                            color: Color(0xFF9DCEFF)),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Expanded(
+                                    child: Container(
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                    image: AssetImage(AssetHelper.sleep),
+                                    fit: BoxFit.cover,
+                                  )),
+                                ))
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -374,32 +399,37 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: Padding(
                           padding: EdgeInsets.all(20.w),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Calories',
-                                style: TextStyle(
-                                    fontSize: 12.sp,
-                                    fontFamily: 'MyfontMedium',
-                                    fontWeight: FontWeight.w500),
-                              ),
-                              Text(
-                                '760 kCal',
-                                style: TextStyle(
-                                    fontSize: 14.sp,
-                                    fontFamily: 'MyfontMedium',
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xFF9DCEFF)),
-                              ),
-                              Expanded(
-                                  child: Container(
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(AssetHelper.kCal),
-                                        fit: BoxFit.fitHeight)),
-                              ))
-                            ],
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.of(context).pushNamed(MealHomeScreen.routeName);
+                            },
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Calories',
+                                  style: TextStyle(
+                                      fontSize: 12.sp,
+                                      fontFamily: 'MyfontMedium',
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                Text(
+                                  '760 kCal',
+                                  style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontFamily: 'MyfontMedium',
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xFF9DCEFF)),
+                                ),
+                                Expanded(
+                                    child: Container(
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(AssetHelper.kCal),
+                                          fit: BoxFit.fitHeight)),
+                                ))
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -491,14 +521,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: EdgeInsets.all(10.w),
-                    child: workOut(
-                        listworkout[index].image ?? '',
-                        listworkout[index].title ?? '',
-                        listworkout[index].titleString ?? '',
-                        listworkout[index].subtitle ?? '',
-                        listworkout[index].image == AssetHelper.workOut2
-                            ? true
-                            : false),
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.of(context).pushNamed(WorkoutHomeScreen.routeName);
+                      },
+                      child: workOut(
+                          listworkout[index].image ?? '',
+                          listworkout[index].title ?? '',
+                          listworkout[index].titleString ?? '',
+                          listworkout[index].subtitle ?? '',
+                          listworkout[index].image == AssetHelper.workOut2
+                              ? true
+                              : false),
+                    ),
                   );
                 },
               )

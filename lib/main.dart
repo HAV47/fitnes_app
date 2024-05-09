@@ -1,22 +1,6 @@
 import 'package:fitness_ui_ticket/constants/dimentions/color_palette.dart';
 import 'package:fitness_ui_ticket/routes.dart';
-import 'package:fitness_ui_ticket/ui/dashboard/ativity_tracker_screen.dart';
-import 'package:fitness_ui_ticket/ui/dashboard/complete_setup_screen.dart';
-import 'package:fitness_ui_ticket/ui/dashboard/home_screen.dart';
-import 'package:fitness_ui_ticket/ui/dashboard/notification_screen.dart';
-import 'package:fitness_ui_ticket/ui/dashboard/profile_screen.dart';
-import 'package:fitness_ui_ticket/ui/login_register/intro_register_screen.dart';
-import 'package:fitness_ui_ticket/ui/login_register/login_screen.dart';
-import 'package:fitness_ui_ticket/ui/login_register/welcome_screen.dart';
-import 'package:fitness_ui_ticket/ui/meal_planner/breakfast_screen.dart';
-import 'package:fitness_ui_ticket/ui/meal_planner/meal_home_screen.dart';
-import 'package:fitness_ui_ticket/ui/meal_planner/meal_schedule_screen.dart';
-import 'package:fitness_ui_ticket/ui/meal_planner/pancake_screen.dart';
 import 'package:fitness_ui_ticket/ui/splash_screen.dart';
-import 'package:fitness_ui_ticket/ui/workout_tracker/fullbody_workout_screen.dart';
-import 'package:fitness_ui_ticket/ui/workout_tracker/instruct_workout_screen.dart';
-import 'package:fitness_ui_ticket/ui/workout_tracker/workout_home_screen.dart';
-import 'package:fitness_ui_ticket/ui/workout_tracker/workout_schedule_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -43,7 +27,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(
                   seedColor: ColorPalette.backgroundScaffoldColor)),
           routes: routes,
-          home: MealScheduleScreen(),
+          home: SplashScreen(),
         );
       },
     );

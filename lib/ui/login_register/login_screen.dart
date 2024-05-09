@@ -1,14 +1,10 @@
-import 'dart:ui';
-
 import 'package:fitness_ui_ticket/constants/dimentions/color_palette.dart';
-import 'package:fitness_ui_ticket/constants/extention/text_extentions.dart';
 import 'package:fitness_ui_ticket/constants/helper/asset_helper.dart';
+import 'package:fitness_ui_ticket/ui/login_register/complete_screen.dart';
 import 'package:fitness_ui_ticket/widget/appbar_container_widget.dart';
 import 'package:fitness_ui_ticket/widget/button_widget.dart';
 import 'package:fitness_ui_ticket/widget/input_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -76,6 +72,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(height: 250.w),
                     ButtonWidget(
                       title: ' Login ',
+                      onTap: (){
+                        Navigator.of(context).pushNamed(CompleteScreen.routeName);
+                      },
                       icon: AssetHelper.iconLogin,
                     ),
                     SizedBox(

@@ -70,7 +70,7 @@ class _CompleteScreenState extends State<CompleteScreen> {
                   SizedBox(height: 20.w),
                   InputWidget(
                     iconLeft: Image.asset(
-                      AssetHelper.iconCalendar,
+                      AssetHelper.iconCalendar,scale: 2,
                       color: ColorPalette.black,
                     ),
                     title: 'Date of Birth',

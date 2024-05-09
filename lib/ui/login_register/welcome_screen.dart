@@ -1,5 +1,4 @@
 import 'package:fitness_ui_ticket/constants/dimentions/color_palette.dart';
-import 'package:fitness_ui_ticket/constants/extention/text_extentions.dart';
 import 'package:fitness_ui_ticket/constants/helper/asset_helper.dart';
 import 'package:fitness_ui_ticket/ui/dashboard/home_screen.dart';
 import 'package:fitness_ui_ticket/widget/button_widget.dart';

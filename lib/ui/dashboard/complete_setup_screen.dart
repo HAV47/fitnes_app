@@ -1,5 +1,6 @@
 import 'package:fitness_ui_ticket/constants/dimentions/color_palette.dart';
 import 'package:fitness_ui_ticket/constants/helper/asset_helper.dart';
+import 'package:fitness_ui_ticket/ui/dashboard/home_screen.dart';
 import 'package:fitness_ui_ticket/widget/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -59,7 +60,9 @@ class _CompleteSetupScreenState extends State<CompleteSetupScreen> {
           Spacer(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),
-            child: ButtonWidget(title: 'Go To Home'),
+            child: ButtonWidget(title: 'Go To Home',onTap: (){
+              Navigator.of(context).pushNamed(HomeScreen.routeName);
+            },),
           )
         ],
       ),

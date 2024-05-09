@@ -1,12 +1,10 @@
 import 'package:fitness_ui_ticket/constants/dimentions/color_palette.dart';
 import 'package:fitness_ui_ticket/constants/helper/asset_helper.dart';
-import 'package:fitness_ui_ticket/ui/login_register/complete_screen.dart';
+import 'package:fitness_ui_ticket/ui/login_register/login_screen.dart';
 import 'package:fitness_ui_ticket/widget/appbar_container_widget.dart';
 import 'package:fitness_ui_ticket/widget/button_widget.dart';
 import 'package:fitness_ui_ticket/widget/input_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -89,7 +87,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   SizedBox(height: 150.w),
                   ButtonWidget(
                     title: 'Register',
-                    onTap: () {Navigator.of(context).pushNamed(CompleteScreen.routeName);},
+                    onTap: () {Navigator.of(context).pushNamed(LoginScreen.routeName);},
                   ),
                   SizedBox(
                     height: 20.w,

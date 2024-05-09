@@ -18,7 +18,12 @@ class _MealScheduleScreenState extends State<MealScheduleScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Text('Meal Schedule',style: TextStyle(fontFamily: 'MyfontBold',fontSize: 16.sp,fontWeight: FontWeight.w700)),
-        leading: Image.asset(AssetHelper.iconX, scale: 0.8),
+        leading: GestureDetector(
+          onTap: (){
+            Navigator.of(context).pop();
+          },
+          child: Image.asset(AssetHelper.iconX, scale: 0.8),
+        ),
         actions: [
           Image.asset(AssetHelper.iconAppbarRight),
           SizedBox(width: 10.w)
@@ -126,6 +131,7 @@ class _MealScheduleScreenState extends State<MealScheduleScreen> {
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w600,
                         color: ColorPalette.black)),
+                SizedBox(height: 20.w),
                 nutri(true,'Calories',AssetHelper.ms9,'320 kCal',AssetHelper.ms13),
                 SizedBox(height: 20.w),
                 nutri(false, 'Proteins', AssetHelper.ms10,'300g', AssetHelper.ms14),

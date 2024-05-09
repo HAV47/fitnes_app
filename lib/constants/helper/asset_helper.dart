@@ -28,7 +28,7 @@ class AssetHelper {
   static const String iconRight = 'assets/icons/Arrow_Right.png';
   static const String iconHeart = 'assets/icons/love_icon.png';
   static const String iconX = 'assets/icons/x.png';
-  static const String dot = 'assets/icons/dot.png';
+  static const String dot = 'assets/icons/Dot.png';
   static const String calories = 'assets/icons/calories.png';
 
   //icon Notification
@@ -157,5 +157,47 @@ class AssetHelper {
   static const String ms11 = 'assets/icons/ms11.png';
   static const String ms12 = 'assets/icons/ms12.png';
 
+  // sleep tracker
+  static const String sleeptracker = 'assets/images/sleep3.png';
+  static const String sleeptracker2 = 'assets/images/sleep2.png';
+  static const String sche1 = 'assets/icons/sche1.png';
+  static const String sche2 = 'assets/icons/sche2.png';
+  static const String iconMore = 'assets/icons/iconmore.png';
 
+  // Sleep schedule
+  static const String sleepSchedule1 = 'assets/images/sleep_schedule1.png';
+  static const String sche3 = 'assets/images/sche3.png';
+  // Add Alarm
+  static const String add1 = 'assets/icons/add1.png';
+  static const String add2 = 'assets/icons/add2.png';
+  static const String add3 = 'assets/icons/add3.png';
+  static const String add4 = 'assets/icons/add4.png';
+  static const String add5 = 'assets/icons/add5.png';
+  // progress photo
+  static const String photo1 = 'assets/images/photo1.png';
+  static const String photo2 = 'assets/images/photo2.png';
+  static const String photo3 = 'assets/images/photo3.png';
+  static const String photo4 = 'assets/images/photo4.png';
+  static const String photo5 = 'assets/images/photo5.png';
+  static const String photo6 = 'assets/images/photo6.png';
+  static const String photo7 = 'assets/images/photo7.png';
+  static const String photo8 = 'assets/images/photo8.png';
+  static const String camera = 'assets/icons/camera.png';
+
+  //result
+  static const String iconShare = 'assets/icons/share_icon.png';
+  static const String progressBar = 'assets/images/ProgressBar.png';
+  static const String r1 = 'assets/images/r1.png';
+  static const String r2 = 'assets/images/r2.png';
+  static const String r3 = 'assets/images/r3.png';
+  static const String r4 = 'assets/images/r4.png';
+  static const String r5 = 'assets/images/r5.png';
+  static const String r6 = 'assets/images/r6.png';
+  static const String r7 = 'assets/images/r7.png';
+  static const String r8 = 'assets/images/r8.png';
+  static const String r9 = 'assets/images/r9.png';
+  static const String r10 = 'assets/images/r10.png';
+  static const String r11 = 'assets/images/r11.png';
+  static const String r12 = 'assets/images/r12.png';
+  static const String r13 = 'assets/images/r13.png';
 }

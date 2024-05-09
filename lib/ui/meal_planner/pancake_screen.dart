@@ -240,7 +240,9 @@ class _PancakeScreenState extends State<PancakeScreen> {
               bottom: 30,
               right: 30,
               left: 30,
-              child: ButtonWidget(title: 'Star Workout', )
+              child: ButtonWidget(title: 'Add to Breakfast Meal',onTap: (){
+                Navigator.of(context).pop();
+              }, )
           )
         ],
       ),

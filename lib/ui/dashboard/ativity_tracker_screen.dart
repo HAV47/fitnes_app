@@ -1,8 +1,6 @@
 import 'package:fitness_ui_ticket/constants/dimentions/color_palette.dart';
 import 'package:fitness_ui_ticket/constants/helper/asset_helper.dart';
 import 'package:fitness_ui_ticket/widget/appbar_dashboard_widget.dart';
-import 'package:fitness_ui_ticket/widget/drop_button_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -74,8 +72,7 @@ class _ActivityTrackerScreenState extends State<ActivityTrackerScreen> {
                                   child: ListTile(
                                     leading: Image.asset(
                                       AssetHelper.at1,
-                                      scale: 1.1,
-                                    ),
+                                      scale: 1.1),
                                     title: Text('8L',
                                         style: TextStyle(
                                             fontFamily: 'MyfontMedium',
@@ -219,13 +216,18 @@ class _ActivityTrackerScreenState extends State<ActivityTrackerScreen> {
                               fontWeight: FontWeight.w600,
                               color: ColorPalette.black)),
                       Spacer(),
-                      Text(
-                        'See more',
-                        style: TextStyle(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'Myfont',
-                            color: ColorPalette.gray2),
+                      GestureDetector(
+                        onTap: (){
+
+                        },
+                        child: Text(
+                          'See more',
+                          style: TextStyle(
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'Myfont',
+                              color: ColorPalette.gray2),
+                        ),
                       )
                     ],
                   ),

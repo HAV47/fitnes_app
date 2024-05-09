@@ -3,6 +3,7 @@ import 'package:fitness_ui_ticket/constants/dimentions/color_palette.dart';
 import 'package:fitness_ui_ticket/constants/extention/text_extentions.dart';
 import 'package:fitness_ui_ticket/constants/helper/asset_helper.dart';
 import 'package:fitness_ui_ticket/constants/model/register_model.dart';
+import 'package:fitness_ui_ticket/ui/login_register/welcome_screen.dart';
 import 'package:fitness_ui_ticket/widget/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -107,7 +108,7 @@ class _IntroRegisterScreenState extends State<IntroRegisterScreen> {
           SizedBox(
             width: 300.w,
             child: ButtonWidget(title: 'Confirm',onTap: (){
-              // Navigator.of(context).pushNamed()
+              Navigator.of(context).pushNamed(WelcomeScreen.routeName);
             },),
           )
         ],

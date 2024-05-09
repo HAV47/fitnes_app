@@ -17,6 +17,7 @@ class ColorPalette {
   static const Color textColor = Color(0xFF323B4B);
   static const Color borderColor = Color(0xffF7F8F8);
   static const Color backgroundScaffoldColor = Color(0xFFF2F2F2);
+  static const Color success = Color(0xFF42D742);
 }
 
 class Gradients {

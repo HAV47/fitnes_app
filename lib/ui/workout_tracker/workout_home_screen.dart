@@ -1,5 +1,6 @@
 import 'package:fitness_ui_ticket/constants/dimentions/color_palette.dart';
 import 'package:fitness_ui_ticket/constants/helper/asset_helper.dart';
+import 'package:fitness_ui_ticket/ui/workout_tracker/fullbody_workout_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class WorkoutHomeScreen extends StatefulWidget {
   const WorkoutHomeScreen({super.key});
 
-  static String routeName = 'home_screen';
+  static String routeName = 'workout_home_screen';
 
   @override
   State<WorkoutHomeScreen> createState() => _WorkoutHomeScreenState();
@@ -22,14 +23,19 @@ class _WorkoutHomeScreenState extends State<WorkoutHomeScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        leading: Center(
-          child: Container(
-            height: 30.w,
-            width: 30.w,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.w),
-                color: ColorPalette.white),
-            child: Image.asset(AssetHelper.iconBackAppbar),
+        leading: GestureDetector(
+          onTap: (){
+            Navigator.of(context).pop();
+          },
+          child: Center(
+            child: Container(
+              height: 30.w,
+              width: 30.w,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.w),
+                  color: ColorPalette.white),
+              child: Image.asset(AssetHelper.iconBackAppbar),
+            ),
           ),
         ),
         title: Text('Workout Tracker',
@@ -207,8 +213,6 @@ class _WorkoutHomeScreenState extends State<WorkoutHomeScreen> {
                                   },
                                 ),
                               ),
-
-                              // leading: Text('đấ'),
                             ),
                           ),
                         ),
@@ -307,7 +311,9 @@ class _WorkoutHomeScreenState extends State<WorkoutHomeScreen> {
                     borderRadius: BorderRadius.circular(50.w),
                   ),
                   child: Center(
-                    child: Text('View more',style: TextStyle(fontSize: 10.sp,fontFamily: 'Myfont',color: Color(0xFF92A3FD)),),),
+                    child: GestureDetector(onTap: (){
+                      Navigator.of(context).pushNamed(FullbodyWorkoutScreen.routeName);
+                    },child: Text('View more',style: TextStyle(fontSize: 10.sp,fontFamily: 'Myfont',color: Color(0xFF92A3FD)),)),),
                 )
               ],
             ),

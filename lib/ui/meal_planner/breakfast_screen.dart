@@ -1,10 +1,8 @@
 import 'package:fitness_ui_ticket/constants/dimentions/color_palette.dart';
 import 'package:fitness_ui_ticket/constants/helper/asset_helper.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:fitness_ui_ticket/ui/meal_planner/pancake_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BreakfastScreen extends StatefulWidget {
   const BreakfastScreen({super.key});
@@ -27,7 +25,12 @@ class _BreakfastScreenState extends State<BreakfastScreen> {
                 fontFamily: 'MyfontBold',
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w700)),
-        leading: Image.asset(AssetHelper.iconX, scale: 0.8),
+        leading: GestureDetector(
+          onTap: (){
+            Navigator.of(context).pop();
+          },
+          child: Image.asset(AssetHelper.iconX, scale: 0.8),
+        ),
         actions: [
           Image.asset(AssetHelper.iconAppbarRight),
           SizedBox(width: 10.w)
@@ -225,7 +228,12 @@ class _BreakfastScreenState extends State<BreakfastScreen> {
         leading: Image.asset(image),
         title: Text(title,style: TextStyle(fontSize: 14.sp,fontFamily: 'Myfont',fontWeight: FontWeight.w600)),
         subtitle: Text(subtitle,style: TextStyle(fontSize: 12.sp,fontFamily: 'Myfont',fontWeight: FontWeight.w500,color: ColorPalette.gray1)),
-        trailing: Image.asset(AssetHelper.workOut),
+        trailing: GestureDetector(
+          onTap: (){
+            Navigator.of(context).pushNamed(PancakeScreen.routeName);
+          },
+          child:Image.asset(AssetHelper.workOut),
+        )
       ),
     );
   }

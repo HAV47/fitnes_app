@@ -1,5 +1,7 @@
 import 'package:fitness_ui_ticket/constants/dimentions/color_palette.dart';
 import 'package:fitness_ui_ticket/constants/helper/asset_helper.dart';
+import 'package:fitness_ui_ticket/ui/meal_planner/breakfast_screen.dart';
+import 'package:fitness_ui_ticket/ui/meal_planner/meal_schedule_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,7 +24,12 @@ class _MealHomeScreenState extends State<MealHomeScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Text('Meal Planner',style: TextStyle(fontFamily: 'MyfontBold',fontSize: 16.sp,fontWeight: FontWeight.w700)),
-        leading: Image.asset(AssetHelper.iconX, scale: 0.8),
+        leading: GestureDetector(
+          onTap: (){
+            Navigator.of(context).pop();
+          },
+          child: Image.asset(AssetHelper.iconX, scale: 0.8),
+        ),
         actions: [
           Image.asset(AssetHelper.iconAppbarRight),
           SizedBox(width: 10.w)
@@ -107,7 +114,9 @@ class _MealHomeScreenState extends State<MealHomeScreen> {
                             fontWeight: FontWeight.w600)),
                     Spacer(),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushNamed(MealScheduleScreen.routeName);
+                      },
                       child: Container(
                         width: 70,
                         height: 30,
@@ -236,7 +245,9 @@ class _MealHomeScreenState extends State<MealHomeScreen> {
                               gradient: Gradients.blueLinear,
                               borderRadius: BorderRadius.circular(50.w),
                             ),
-                            child: Center(child: Text('Select',style: TextStyle(color: ColorPalette.white,fontFamily: 'Myfont',fontWeight: FontWeight.w700,fontSize: 12.sp))),
+                            child: GestureDetector(onTap: (){
+                              Navigator.of(context).pushNamed(BreakfastScreen.routeName);
+                            },child: Center(child: Text('Select',style: TextStyle(color: ColorPalette.white,fontFamily: 'Myfont',fontWeight: FontWeight.w700,fontSize: 12.sp)))),
                           )
                         ],
                       ),
@@ -299,7 +310,8 @@ class _MealHomeScreenState extends State<MealHomeScreen> {
                 color: ColorPalette.borderColor,
                 blurRadius: 15.w,
                 spreadRadius: 10.w)
-          ]),
+          ]
+      ),
       child: Padding(
         padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
         child: ListTile(

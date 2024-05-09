@@ -1,5 +1,6 @@
 import 'package:fitness_ui_ticket/constants/dimentions/color_palette.dart';
 import 'package:fitness_ui_ticket/constants/helper/asset_helper.dart';
+import 'package:fitness_ui_ticket/ui/workout_tracker/instruct_workout_screen.dart';
 import 'package:fitness_ui_ticket/widget/button_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,14 +32,19 @@ class _FullbodyWorkoutScreenState extends State<FullbodyWorkoutScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        leading: Center(
-          child: Container(
-            height: 30.w,
-            width: 30.w,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8.w),
-                color: ColorPalette.white),
-            child: Image.asset(AssetHelper.iconBackAppbar),
+        leading: GestureDetector(
+          onTap: (){
+            Navigator.of(context).pop();
+          },
+          child: Center(
+            child: Container(
+              height: 30.w,
+              width: 30.w,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8.w),
+                  color: ColorPalette.white),
+              child: Image.asset(AssetHelper.iconBackAppbar),
+            ),
           ),
         ),
         actions: [
@@ -228,7 +234,9 @@ class _FullbodyWorkoutScreenState extends State<FullbodyWorkoutScreen> {
             bottom: 30,
             right: 30,
             left: 30,
-            child: ButtonWidget(title: 'Star Workout', )
+            child: ButtonWidget(title: 'Star Workout', onTap: (){
+              Navigator.of(context).pushNamed(InstructWorkoutScreen.routeName);
+            },)
           )
         ],
       ),

@@ -215,7 +215,9 @@ class _InstructWorkoutScreenState extends State<InstructWorkoutScreen> {
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w600)),
               RepetitonsPicker(),
-              ButtonWidget(title: 'Save')
+              ButtonWidget(title: 'Save',onTap: (){
+                Navigator.of(context).pop();
+              },)
             ],
           ),
         ),
